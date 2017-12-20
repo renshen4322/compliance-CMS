@@ -1,0 +1,44 @@
+﻿<form name="CheckItemForm" class="nzcompliancePane"
+      ng-controller="checkItemEditController"
+      ng-submit="SaveCheckItem()">
+    
+
+    <umbeditpageentitler />
+    <div class="umb-panel-body umb-scrollable row-fluid">
+        <div class="tab-content form-horizontal ln-form-bottom">
+            <div class="umb-pane">
+                <umb-control-group label="DocID" description="DocID">
+                    <input id="DocID" type="text" class="umb-editor umb-textstring" ng-model="checkItemPageModel.DocID" />
+                </umb-control-group>
+                <umb-control-group label="CheckItemContent" description="CheckItemContent">
+                    <umb-property property="property" ng-repeat="property in checkItemContentProperties">
+                        <umb-editor model="property"></umb-editor>
+                    </umb-property>
+                </umb-control-group>
+                <umb-control-group label="Penalty" description="Penalty">
+                    <umb-property property="property" ng-repeat="property in penaltyProperties">
+                        <umb-editor model="property"></umb-editor>
+                    </umb-property>
+                </umb-control-group>
+                <umb-control-group label="ReasonCodes" description="ReasonCodes">
+                    <umb-property property="property" ng-repeat="property in reasonCodesProperties">
+                        <umb-editor model="property"></umb-editor>
+                    </umb-property>
+                </umb-control-group>
+
+                <div class="umb-tab-buttons ln-SaveBtnGroup">
+                    <div class="btn-group">
+                        <button type="submit" data-hotkey="ctrl+s" class="btn btn-success">
+                            <localize key="buttons_save">Save</localize>
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn btn-back" href="#/SEACompliance/SEACompliance/RICheckItem/-1">
+                            Go Back
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

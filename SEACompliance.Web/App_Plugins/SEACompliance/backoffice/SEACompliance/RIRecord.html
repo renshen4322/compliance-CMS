@@ -1,0 +1,75 @@
+﻿<style type="text/css">
+  .record-formatSpan {
+    display: inline-block;
+    width: 200px;
+  }
+</style>
+<div ng-controller="recordController">
+  <!--<div data-ng-init="getAllRecord()">-->
+  <div data-ng-init="fetchData(recordPagerModel.CurrentPage)">
+    <umb-panel>
+      <umb-header>
+        <umbeditpageentitler />
+        <div class="btn-group ln-createBtn">
+          <a class="btn btn-primary" ng-click="location()">Create</a>
+        </div>
+      </umb-header>
+      <div class="umb-panel-body umb-scrollable row-fluid">
+        <div class="topic_filter">
+          <span>&nbsp;</span>
+        </div>
+        <div class="umb-pane">
+          <h3 style="padding-left: 8px;">Document management</h3>
+          &nbsp; <input type="text" ng-keydown="$event.keyCode === 13 && fetchData(1)" class="umb-editor umb-textstring" ng-model="recordSearchWord.keyWord" />
+          <button style="margin-bottom: 10px;" type="button" class="btn btn-primary preQuestionSearchBtn" ng-click="fetchData(1)">
+             Search
+          </button>
+        </div>
+        <div class="tab-content form-horizontal">
+          <div class="umb-pane documentList">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Document Id</th>
+                  <th>Title</th>
+                  <th>Version</th>
+                  <th>Author</th>
+                  <th>Overview</th>
+                  <th>Update date</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="record in recordPagerModel.Items">
+                  <td>{{record.DocID}}</td>
+                  <td>
+                    <!-- <p ng-bind-html="cleanup(record.Title)"></p> -->
+                    <p>{{record.Title}}</p>
+                  </td>
+                  <td>
+                    <p>{{record.Version}}</p>
+                  </td>
+                  <td>
+                    <p>{{record.Author}}</p>
+                  </td>
+                  <td>
+                    <span ng-bind-html="record.Summary"></span>
+                  </td>
+                  <td style="width: 144px;">{{record.formatDate}}</td>
+                  <td><a class="btn btn-primary" href="javascript:;" ng-click="location(record.DocID)">Edit</a></td>
+                  <td><a class="btn btn-danger" href="javascript:;" ng-click="deleteRecordById(record)">Delete</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="flex justify-center">
+              <umb-pagination ng-if="recordPagerModel.TotalPages" page-number="recordPagerModel.CurrentPage" total-pages="recordPagerModel.TotalPages"
+                on-next="nextPage" on-prev="prevPage" on-go-to-page="setPage">
+              </umb-pagination>
+            </div>
+          </div>
+        </div>
+      </div>
+    </umb-panel>
+  </div>
+</div>

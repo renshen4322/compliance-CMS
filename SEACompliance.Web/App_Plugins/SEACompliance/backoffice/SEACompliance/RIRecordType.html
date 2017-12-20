@@ -1,0 +1,163 @@
+﻿
+<form name="RecordTypeForm" class="nzcompliancePane"
+      ng-controller="recordTypeController">
+    <umbeditpageentitler />
+    <div id="page" style="min-height: 500px;">
+        <div class="content modify">
+            <div class="buttons">
+                <div class="button searchButton" id="btnCreate" data-id="0" data-category="Module" data-depth="1" onclick="ShowDivAdd(this)">
+                    <div>
+                        Create Module
+                    </div>
+                </div>
+                
+            </div>
+            <div id="packages" class="rimodules">
+
+            </div>
+            <div id="popUp" style="width: 697px; top: 150.5px; left: 143.5px;">
+                <div class="content modify" id="updatePackagePop" style="display: block;">
+                    <div class="header">
+                        <h2>
+                            Add or Modify
+                        </h2>
+                        <button class="close" title="Close" value="" onclick="closeDiv()">
+                            Close
+                        </button>
+                    </div>
+                    <input type="hidden" id="txtId" name="txtId">
+                    <input type="hidden" id="txtParentCode" name="txtParentCode">
+                    <input type="hidden" id="txtDepth" name="txtDepth">
+                    <div id="PackageDetails">
+                        <div>
+                            <label>
+                                Class
+                            </label>
+                            <input type="text" class="text" id="txtCategory_u" name="txtCategory" disabled="">
+                        </div>
+                        <div>
+                            <label>
+                                ID
+                            </label>
+                            <input type="text" class="text" id="txtPackageId_u" name="txtPackageId" disabled="">
+                        </div>
+                        <div>
+                            <label for="txtModuleName">
+                                Label
+                            </label>
+                            <input type="text" class="text" id="txtModuleName_u" name="txtModuleName">
+                        </div>
+                        <!--<div>
+                            <label for="txtAbbreviation">
+                                Abbreviation
+                            </label>
+                            <input type="text" class="text" id="txtAbbreviation_u" name="txtAbbreviation" disabled="">
+                        </div>-->
+                        <div>
+                            <label for="txtSummary">
+                                Summary
+                            </label>
+                            <textarea class="text" id="txtSummary_u" name="txtSummary"></textarea>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <div class="button searchButton" id="submitUpdatePackge" ng-click="SubmitData()">
+                            <div>
+                                Change and Save
+                            </div>
+                        </div>
+                        <div class="button cancelButton" id="cancelUpdatePackage" onclick="closeDiv()">
+
+                            <div>
+                                Cancel
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="overlay" style="height: 16251px;"></div>
+</form>
+<script type="text/javascript">
+
+    function closeDiv() {
+        $('#popUp').css('display', 'none');
+        $('#overlay').css('display', 'none');
+        $('#txtCategory_u').val('');
+        $('#txtPackageId_u').val('');
+        $('#txtModuleName_u').val('');
+        $('#txtSummary_u').val('');
+        $('#txtId').val('');
+        $('#txtParentCode').val('');
+        $('#txtDepth').val('');
+    }
+
+    function ShowDiv(obj)
+    {
+        $('#popUp').css('display', 'block');
+        $('#overlay').css('display', 'block');
+        $('#txtCategory_u').val($(obj).attr("data-category"));
+        $('#txtPackageId_u').val($(obj).attr("data-id"));
+        $('#txtModuleName_u').val($(obj).attr("data-name"));
+        $('#txtSummary_u').val($(obj).attr("data-sum"));
+        $('#txtId').val($(obj).attr("data-hid"));
+        $('#txtParentCode').val($(obj).attr("data-hpcode"));
+        $('#txtDepth').val($(obj).attr("data-hidDepth"));
+    }
+
+    function ShowDivAdd(obj) {
+        $('#popUp').css('display', 'block');
+        $('#overlay').css('display', 'block');
+        $('#txtCategory_u').val($(obj).attr("data-category"));
+        $('#txtPackageId_u').val($(obj).attr("data-id"));
+        $('#txtPackageId_u').attr("disabled", false);
+        $('#txtModuleName_u').val($(obj).attr("data-name"));
+        $('#txtSummary_u').val($(obj).attr("data-sum"));
+        $('#txtId').val(0);
+        $('#txtParentCode').val($(obj).attr("data-id"));
+        $('#txtDepth').val($(obj).attr("data-depth"));
+    }
+    
+    function DelData(id)
+    {
+        //DeleteRecordType  GetDeleteRecordType
+        if (confirm("Are you sure to delete this recordtype?")) {
+
+            $.ajax({
+                type: "post",
+                dataType: "text",
+                url: "backoffice/SEACompliance/RIRecordApi/DeleteRecordType?id=" + id,
+                success: function (ret) {
+                    alert("deleted");
+                    //window.location.reload();
+
+                    //通过controller来获取Angular应用
+                    var appElement = document.querySelector('[ng-controller=recordTypeController]');
+                    //获取$scope变量
+                    var $scope = angular.element(appElement).scope();
+                    //调用msg变量，并改变msg的值
+                    //$scope.msg = '123456';
+                    //上一行改变了msg的值，如果想同步到Angular控制器中，则需要调用$apply()方法即可
+                    
+                    //调用控制器中的getData()方法
+                    $scope.PageInit();
+                    $scope.$apply();
+                }
+
+            })
+            return true;
+        } else {
+            return false;
+        }
+       
+        //recordResource.DeleteRecordType(id).then(function (response) {
+        //    if (response.data.data) {
+        //        InitForm();
+        //        closeDiv();
+        //    }
+        //});
+    }
+    closeDiv();
+</script>

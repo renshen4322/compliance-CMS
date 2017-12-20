@@ -1,0 +1,81 @@
+<div class="editCheckItemModal">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Add/Edit check item</h4>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <div class="editCheckItem">
+      <div class="row">
+        <div class="span2 text-right editTitle" style="padding-top: 6px;">Importance</div>
+        <div class="span6">
+          <div class="btn-group" style="padding-bottom:3px">
+            <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+              {{editObj.Importance}}
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li ng-click="editObj.Importance = 1">
+                <a href="javascript:;">1</a>
+              </li>
+              <li ng-click="editObj.Importance = 2">
+                <a href="javascript:;">2</a>
+              </li>
+              <li ng-click="editObj.Importance = 3">
+                <a href="javascript:;">3</a>
+              </li>
+              <li ng-click="editObj.Importance = 4">
+                <a href="javascript:;">4</a>
+              </li>
+              <li ng-click="editObj.Importance = 5">
+                <a href="javascript:;">5</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 12px;">
+        <div class="span2 text-right editTitle">UnderReview</div>
+        <div class="span6">
+          <div class="underContent" style="margin-left: -26px;">
+            <label class="radio">
+              <input type="radio" name="optionsRadios" ng-model="editObj.UnderReview" id="optionsRadios"  value="1">
+              YES
+            </label>
+            <label class="radio">
+              <input type="radio" name="optionsRadios" ng-model="editObj.UnderReview" id="optionsRadios" value="0">
+                NO
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 12px;">
+        <div class="span2 text-right editTitle">Content</div>
+        <div class="span6 editContent">
+          <umb-property property="property" ng-repeat="property in editObj.checkItemContent">
+            <umb-editor model="property" id="checkItemContent"></umb-editor>
+          </umb-property>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span2 text-right editTitle">Penalty</div>
+        <div class="span6 editContent">
+          <umb-property property="property" ng-repeat="property in editObj.penalty">
+            <umb-editor model="property" id="penalty"></umb-editor>
+          </umb-property>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span2 text-right editTitle">Relevant Legislation</div>
+        <div class="span6 editContent">
+          <umb-property property="property" ng-repeat="property in editObj.reasonCodes">
+            <umb-editor model="property" id="reasonCodes"></umb-editor>
+          </umb-property>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer" style="padding-right: 141px;">
+    <a href="javascript:;" class="btn btn-primary" ng-click="ok()">Save</a>
+    <a ng-if="isShowNewVersion" href="javascript:;" class="btn btn-warning" ng-click="ok('newVersion')">Save as new version</a>
+    <a href="javascript:;" class="btn" ng-click="cancel()">Cancel</a>
+  </div>
+</div>

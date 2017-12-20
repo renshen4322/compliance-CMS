@@ -1,0 +1,15 @@
+{
+  "name": "sea_compliance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lixingda",
+  "license": "ISC",
+  "dependencies": {
+    "angular-file-upload": "^2.5.0",
+    "he": "^1.1.1"
+  }
+}

@@ -1,0 +1,77 @@
+<div class="editCheckItemModal">
+  <div class="modal-header versionInfo">
+    <div class="row-fluid">
+      <div class="span6">
+        <b>Before</b>(Version {{diffCheckItem.curElement.Version}})
+      </div>
+      <div class="span6">
+        <b>After</b>(Version {{diffCheckItem.diffElement.Version}})
+      </div>
+    </div>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <div class="diffCheckItem">
+      <div class="row-fluid">
+        <div class="span6 diffLeft">
+          <div class="diffCenter">
+            <div class="diff-title">
+              <b>Importance</b>
+              <div class="diff-content" ng-bind-html="diffCheckItem.curElement.Importance"></div></div>
+            <div class="diff-title">
+              <b>Content</b>
+              <div class="diff-content">
+                <p ng-bind-html="diffCheckItem.curElement.CheckItemContent"></p>
+              </div>
+            </div>
+            <div class="diff-title">
+              <b>Penalty</b>
+              <div class="diff-content">
+                <p ng-bind-html="diffCheckItem.curElement.Penalty"></p>
+              </div>
+            </div>
+            <div class="diff-title">
+              <b>Relevant Legislation</b>
+              <div class="diff-content">
+                <p ng-bind-html="diffCheckItem.curElement.ReasonCodes"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="span6 diffRight">
+          <div class="diffCenter">
+            <div class="diff-title">
+              <b>Importance</b>
+              <!-- <div class="diff-content" ng-bind-html="diffCheckItem.diffElement.Importance"> -->
+              <div class="diff-content" id="afterImportance">
+              </div>
+            </div>
+            <div class="diff-title">
+              <b>Content</b>
+              <div class="diff-content">
+                <!-- <p ng-bind-html="diffCheckItem.diffElement.CheckItemContent"></p> -->
+                <p id="afterContent"></p>
+              </div>
+            </div>
+            <div class="diff-title">
+              <b>Penalty</b>
+              <div class="diff-content">
+                <!-- <p ng-bind-html="diffCheckItem.diffElement.Penalty"></p> -->
+                <p id="afterPenalty"></p>
+              </div>
+            </div>
+            <div class="diff-title">
+              <b>Relevant Legislation</b>
+              <div class="diff-content">
+                <!-- <p ng-bind-html="diffCheckItem.diffElement.ReasonCodes"></p> -->
+                <p id="afterReasonCodes"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="javascript:;" class="btn" ng-click="cancel()">Cancel</a>
+  </div>
+</div>

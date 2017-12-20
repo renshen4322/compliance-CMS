@@ -1,0 +1,276 @@
+﻿/*/*exaple*/
+/*<div class="ln-umb-editor-wrapper">
+  <div class="ln-umb-editor-container">
+    <div class="ln-umb-table">
+      <!-- Listviews head section -->
+      <div class="ln-umb-table-head">
+        <div class="ln-umb-table-row">
+          <div class="ln-umb-table-cell">
+            <a class="ln-umb-table-head__link sortable" href="#" prevent-default>
+              <span>Email1</span>
+              <i class="ln-umb-table-head__icon icon icon-navigation-down"></i>
+            </a>
+          </div>
+          <div class="ln-umb-table-cell">
+            <a class="ln-umb-table-head__link sortable" href="#" prevent-default>
+              <span>Topic</span>
+              <i class="ln-umb-table-head__icon icon icon-navigation-down"></i>
+            </a>
+          </div>
+          <div class="ln-umb-table-cell">
+            <a class="ln-umb-table-head__link sortable" href="#" prevent-default>
+              <span>Email3</span>
+              <i class="ln-umb-table-head__icon icon icon-navigation-down"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Listview body section -->
+      <div class="ln-umb-table-body">
+        <div class="ln-umb-table-row">
+          <div class="ln-umb-table-cell">
+                <span>LoginName</span>
+          </div>
+          <div class="ln-umb-table-cell">
+                <span>LoginName</span>
+          </div>
+          <div class="ln-umb-table-cell">
+                <span>LoginName</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>*/
+
+
+.ln-umb-editor-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  background: white;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.ln-umb-editor-container {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  height: 100% !important;
+}
+
+.ln-umb-table {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 640px;
+  border: 1px solid #d9d9d9;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.ln-umb-table {
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+
+.ln-umb-table-head {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #f8f8f8;
+}
+
+.ln-umb-table-row {
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -ms-flex-align: center;
+  align-items: center;
+}
+/*.ln-umb-table-cell:first-of-type:not(.not-fixed) {
+    padding: 15px 0;
+    margin: 0 0 0 15px;
+    -ms-flex: 0 0 25px;
+    flex: 0 0 25px;
+}*/
+.ln-umb-table-cell {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 6px 2px;
+  margin: auto 14px;
+  overflow: hidden;
+  text-align: left;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -ms-flex: 1 1 1%;
+  flex: 1 1 1%;
+}
+
+.ln-umb-table a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ln-umb-table-cell > * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ln-umb-table-head__link {
+  position: relative;
+  color: rgba(85,85,85,0.75);
+  text-decoration: none;
+  cursor: default;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: icomoon;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
+.icon-navigation-down:before {
+  content: "\e0c9";
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  display: inline-block;
+  text-decoration: inherit;
+  speak: none;
+}
+
+.ln-umb-table-body .ln-umb-table-row {
+  font-size: 13px;
+  color: rgba(85,85,85,0.75);
+  cursor: pointer;
+  border-top: 1px solid #d9d9d9;
+}
+/*table*/
+/*<div class="ln-tables">
+  <table class="table table-striped ln-table-max">
+    <tr>
+      <td class="ln-key">Text</td>
+      <td class="ln-value-input"><input type="text"/></td>
+      <td class="ln-key">Rank</td>
+      <td class="ln-value-input"><input type="text"/></td>
+      <td class="ln-key">IconSelected</td>
+      <td class="ln-value-media"><umb-media-picker/></td>
+    </tr>
+  </table>
+  <table class="table table-striped ln-table-min">
+    <tr>
+      <td class="ln-key">Icon</td>
+      <td class="ln-value-media"><umb-media-picker/></td>
+      <td class="ln-key"><input type="button" value="Delete" class="btn btn-crop-delete" /></td>
+    </tr>
+  </table>
+</div>*/
+
+
+.ln-tables table{
+  width:auto !important;
+}
+@media screen and (max-width:1920px) {
+  .ln-tables{
+    min-width:1100px;
+  }
+  .ln-table-min{
+    width:300px;
+    float:left;
+    display: inline;
+  }
+  .ln-table-max{
+    width:800px;
+    float:left;
+  }
+  .ln-table-min tbody tr .ln-value-input input,
+  .ln-table-max tbody tr .ln-value-input input
+  {
+    width:150px !important;
+  }
+}
+@media screen and (max-width:1366px) {
+  .ln-tables{
+    min-width:900px;
+  }
+  .ln-table-min{
+    width:200px;
+    float:left;
+    display: inline;
+  }
+  .ln-table-max{
+    width:700px;
+    float:left;
+  }
+  .ln-table-min tbody tr .ln-value-input input,
+  .ln-table-max tbody tr .ln-value-input input
+  {
+    width:70px !important;
+  }
+}
+
+
+.ln-table-min tbody tr td,
+.ln-table-max tbody tr td{
+  height:63px;
+}
+.ln-table-min tbody tr .ln-key,
+.ln-table-max tbody tr .ln-key{
+  width:40px;
+  padding-left:2px !important;
+  padding-right:2px !important;
+}
+.ln-table-min tbody tr .ln-value-media,
+.ln-table-max tbody tr .ln-value-media
+{
+  width:120px;
+}
+.ln-table-min tbody tr .ln-value-media div .ng-scope li,
+.ln-table-max tbody tr .ln-value-media div .ng-scope li{
+    text-overflow: ellipsis;
+    width: 80px;
+    overflow: hidden;
+}
+
+.ln-table-min tbody tr .ln-value-media div .ng-scope li i,
+.ln-table-max tbody tr .ln-value-media div .ng-scope li i
+{    
+  margin-left: -25px !important;
+  position: absolute !important;
+}
+.ln-table-min tbody tr .ln-value-input,
+.ln-table-max tbody tr .ln-value-input
+{
+  width:72px !important;
+}
+
+
+.ln-table-min tbody tr .ln-value .list-icons li,
+.ln-table-max tbody tr .ln-value .list-icons li{
+  width: 120px;
+}

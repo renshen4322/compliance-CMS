@@ -1,0 +1,1614 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/* Over-rides for jol3.css - should we consolidate? */
+body, select, input {
+    font-family: Arial,Helvetica, "DejaVu Sans", "Liberation sans", "Bitstream Vera Sans", sans-serif;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    position: absolute;
+    left: -9999em;
+}
+
+#page {
+    width: 958px;
+    margin: 0 auto;
+    border: 1px solid #999;
+    background: #fff;
+    overflow: hidden;
+    -moz-box-shadow: 0px 0px 7px #bbb;
+    -webkit-box-shadow: 0px 0px 7px #bbb;
+    box-shadow: 0px 0px 7px #bbb;
+}
+
+    #page .content {
+        padding: 2.2em 1em 1em 1em;
+    }
+
+    #page .footerDiv {
+        border: none;
+    }
+
+#findAccounts {
+    float: left;
+    margin: 0 0 1.5em 0;
+}
+
+select.admin-select {
+    width: 25em;
+    display: inline;
+    margin: 0;
+}
+
+a.search {
+    font-weight: bold;
+    font-size: .95em;
+    cursor: pointer;
+    color: #36c;
+    display: inline;
+    padding: 0 0 0 1.3em;
+}
+
+.panel {
+    clear: both;
+    /*border:1px solid #e1e1e1;*/
+    /*background:#f7f6f6;*/
+}
+
+    .panel h2 {
+        color: #666;
+        font-size: 1em;
+        padding: 0;
+        margin: 0;
+        float: left;
+        text-indent: 5px;
+    }
+
+    .panel h3 {
+        font-size: .9em;
+        margin: .4em 0 .8em 0;
+    }
+
+ul.admin-options {
+    margin: .5em 0 0 0;
+    padding: 0;
+    float: right;
+    list-style-type: none;
+    background: #ccc;
+}
+
+.header ul.admin-options {
+    margin: 0 10px;
+}
+
+ul.admin-options li {
+    float: left;
+    background: #fff;
+    margin: 0 1px 0 0;
+    padding: 0 .7em 0 .7em;
+}
+
+    ul.admin-options li.last {
+        margin: 0;
+        padding-right: 0;
+    }
+
+
+.panel .account {
+    float: left;
+    width: 45%;
+    padding: 9px;
+}
+
+.panel .admin {
+    float: left;
+    /*width:589px;*/
+    width: 45%;
+    padding: 9px;
+}
+
+.panel dl {
+    float: none;
+    padding: 0 0 10px 0;
+    width: auto;
+}
+
+.panel dt {
+    font-weight: normal;
+    color: #999;
+    float: left;
+    line-height: 1.6em;
+    width: 150px;
+}
+
+    .panel dt.indent {
+        margin-left: 15px;
+    }
+
+
+.panel dd.indent {
+    margin-left: 40px;
+}
+
+.panel dd {
+    float: left;
+    line-height: 1.6em;
+    margin-left: 30px;
+    width: inherit;
+}
+
+.panel .account dt {
+    clear: left;
+    width: 10em;
+}
+
+.panel .admin dt {
+    width: 10em;
+}
+
+.panel .admin font {
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+.panel .admin .serviceTitle {
+    margin: 6px 0 6px 0;
+    padding-left: 0;
+    color: #999999;
+}
+
+.panel #pageTabs {
+    clear: both;
+    float: none;
+    margin-left: 7px;
+}
+
+ul#pageTabs li {
+    border-color: #ccc #ccc #fff #ccc;
+}
+
+.panel .tab {
+    /*border-top:1px solid #ccc;*/
+    background: #fff;
+    clear: both;
+    padding: 0;
+}
+
+    .panel .tab .header {
+        clear: both;
+        background: #f7f6f6;
+    }
+
+        .panel .tab .header ul li {
+            background-color: #f7f6f6;
+        }
+
+    .panel .tab .form {
+        padding: 15px 0 15px 0;
+    }
+
+.panel input.text {
+    float: left;
+    margin: 0 13px 0px 0;
+    width: 22em;
+    height: 2em;
+}
+
+.searchButton {
+    float: left;
+}
+
+    .searchButton div {
+        background: #cd0036 url("https://cert-legal2admin.lexisnexis.jp/manager/images/buttonbg.gif") repeat-x 0 0;
+        border: 1px solid #eb99af;
+        float: left;
+    }
+
+.cancelButton div {
+    background: #3984d8 url("https://cert-legal2admin.lexisnexis.jp/manager/images/secondary_buttonbg.gif") repeat-x 0 0;
+    border: 1px solid #d0d8f3;
+    float: left;
+}
+
+.panel .tab .panel {
+    background: #fff;
+}
+
+.panel .tab ul.checkList {
+    clear: both;
+    border-left: 1px solid #E1E1E1;
+    border-bottom: 1px solid #E1E1E1;
+    float: left;
+    list-style-type: none;
+    margin: 0 0 0 0;
+    height: 250px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+}
+
+    .panel .tab ul.checkList li {
+        width: 100%;
+        display: inline-block;
+        height: auto;
+    }
+
+    .panel .tab ul.checkList input {
+        border: 0px;
+    }
+
+    .panel .tab ul.checkList li.match {
+        background: #e3effa;
+    }
+
+    .panel .tab ul.checkList li.focused {
+        background: #3366CC;
+        border-bottom: 1px;
+        border-bottom-color: #3366cc;
+    }
+
+        .panel .tab ul.checkList li.focused a {
+            color: #fff;
+        }
+
+    .panel .tab ul.checkList li span.n, .panel .tab ul.listHead li span.sortUserName {
+        display: inline-block;
+        width: 200px;
+    }
+
+    .panel .tab ul.listHead li span.sortLastName, .panel .tab ul.listHead li span.sortFirstName, .panel .tab ul.checkList li span.n1, .panel .tab ul.checkList li span.n2 {
+        display: inline-block;
+        width: 100px;
+        /*height:auto;*/
+        word-wrap: break-word;
+    }
+    /* Add by Nicholas for Show All User*/
+    .panel .tab ul.checkList li span.alertService, .panel .tab ul.checkList li span.searchService,
+    .panel .tab ul.listHead li span.sortAlert, .panel .tab ul.listHead li span.sortSearch {
+        /*display:inline-block;*/
+        display: none;
+        float: left;
+        width: 100px;
+    }
+
+    .panel .tab ul.checkList li span.resetPassword, .panel .tab ul.listHead li span.titleResetPassowrd {
+        display: inline-block;
+        float: left;
+        width: 70px;
+    }
+
+    .panel .tab ul.checkList li span.lastPasswordSendTime, .panel .tab ul.listHead li span.titleLastSendDate {
+        display: inline-block;
+        float: left;
+        width: 100px;
+    }
+
+    .panel .tab ul.checkList li input {
+        margin-top: 3px;
+    }
+
+    .panel .tab ul.checkList li span, .panel .tab ul.listHead li span {
+        cursor: pointer;
+        float: left;
+        line-height: 1.8em;
+        /*padding:4px 0 4px 0px;*/
+        height: 20px;
+        margin-left: 10px;
+        text-decoration: none;
+    }
+
+.titleDelete {
+    background: url("../images/bin.gif") no-repeat scroll -1px center transparent;
+    width: 35px;
+}
+
+.panel .tab ul.listHead {
+    border: 1px solid #E1E1E1;
+    clear: both;
+    float: left;
+    list-style-type: none;
+    margin: 5px 0 0 0;
+    width: 100%;
+    color: #3366cc;
+    font-weight: 700;
+    line-height: 5px;
+    height: 20px;
+    padding-bottom: 5px;
+}
+
+.sortLastName a:hover, .sortFirstName a:hover, .sortUserName a:hover, .sortUserID a:hover, .sortAlert a:hover, .sortSearch a:hover {
+    text-decoration: none;
+}
+
+.sortLastName a, .sortFirstName a, .sortUserName a, .sortUserID a, .sortAlert a, .sortSearch a {
+    line-height: 1.8em;
+    padding-right: 10px;
+}
+
+.sortUp {
+    background: url("../images/sortup.gif") no-repeat right 55% transparent;
+}
+
+.sortDown {
+    background: url("../images/sortdown.gif") no-repeat right 55% transparent;
+}
+
+/* End Nicholas*/
+.panel .tab ul.checkList li a {
+    line-height: 1.8em;
+    /*padding:4px 0 4px 0px;*/
+    float: left;
+    /* Temporary disabling of link styling until user details section developed */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.panel .tab ul.checkList li del {
+    display: inline-block;
+    font-style: italic;
+    background: #f3f3f3;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+    .panel .tab ul.checkList li del a, .panel .tab ul.checkList li.focused del a {
+        color: #999;
+    }
+
+.panel .tab ul.checkList li span.email, .panel .tab ul.listHead li span.sortUserID {
+    display: inline;
+    width: 200px;
+    word-wrap: break-word;
+    height: auto;
+}
+
+.panel .tab ul.checkList li span.resetPassword, .panel .tab ul.listHead li span.titleResetPassowrd {
+    display: inline;
+    width: 80px;
+}
+
+.panel .tab ul.checkList li span.button {
+    width: 7px;
+    height: 7px;
+    text-indent: -9999em;
+    border: none;
+    float: left;
+    margin-top: 8px;
+    cursor: pointer;
+    padding: 0 30px 0 0;
+    background: transparent url("../images/delete-deleted.gif") no-repeat 0 0;
+}
+
+.panel .tab ul.checkList li span.additionalInfo, .panel .tab ul.listHead li span.titleAdditionalInfo {
+    display: inline;
+    width: 200px;
+    word-wrap: break-word;
+    height: auto;
+    color: #3366CC;
+}
+
+.panel .tab ul.checkList li.focused span.lastPasswordSendTime {
+    color: #ffffff;
+}
+
+.panel .tab ul.checkList li span.lastPasswordSendTime {
+    color: #3366cc;
+}
+
+.panel .tab ul.checkList li del span.lastPasswordSendTime, .panel .tab ul.checkList li.focused del span.lastPasswordSendTime {
+    color: #999999;
+}
+
+
+.buttons {
+    float: right;
+    margin: 1em 0 0 0;
+}
+
+    .buttons .button {
+        float: left;
+        margin: 0 0 0 5px;
+        line-height: 1;
+    }
+
+.panel .tab .group-details {
+    margin: 1px 0 0 0;
+    border-top: 1px dotted #ccc;
+    padding: .8em;
+}
+
+    .panel .tab .group-details dl {
+        height: 30px;
+        overflow: auto;
+    }
+
+    .panel .tab .group-details dd {
+        width: 300px;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+        .panel .tab .group-details dd.memo {
+            height: 50px;
+            overflow-y: auto;
+            width: 385px;
+            margin-bottom: -2.7em;
+        }
+
+    .panel .tab .group-details dt {
+        width: 80px;
+    }
+/* modify account */
+.modify h2 {
+    color: #700622;
+    font-size: 1.1em;
+    float: left;
+    /*margin-top:.5em;*/
+}
+
+.modify .form {
+    clear: both;
+    padding: 0 0 0 3.8em;
+}
+
+.modify legend {
+    color: #666;
+    font-size: 1em;
+}
+
+.modify label {
+    float: left;
+    clear: left;
+    margin: 0 1em 0 2em;
+    /*font-size:.9em;*/
+    line-height: 2.6em;
+    width: 160px;
+}
+
+.modify #importUsers label {
+    width: auto;
+}
+
+#popUp .modify label {
+    margin: 0 1em 0 0;
+}
+
+.modify label.radio {
+    background: transparent;
+    clear: none;
+    margin-left: .8em;
+    width: 40px;
+}
+
+.modify input.radio {
+    height: auto;
+    width: auto;
+    clear: none;
+    margin: 7px 0 16px 0;
+    background: transparent;
+}
+
+.modify label.date {
+    clear: none;
+    margin-left: 0;
+    width: 25px;
+    font-weight: normal;
+}
+
+.modify input, .modify select, .modify textarea {
+    float: left;
+}
+    /* modify by Nicholas*/
+    .modify input.text {
+        width: 343px;
+        height: auto;
+        padding-left: 0.25em;
+        line-height: normal;
+    }
+
+    /*modify by Nicholas for "Add/Modify Account"*/
+
+    .modify input.date {
+        width: auto;
+        height: auto;
+        margin-right: 6px;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+.modify textarea {
+    width: 343px;
+    margin: 0 0 0.75em;
+}
+/*modify by Nicholas for "Add/Modify Account"*/
+.modify fieldset#partnerInformation div,
+.modify fieldset#servicesInformation div,
+.modify fieldset#LEXISJP_JOL3ALERT_service div,
+.modify fieldset#LEXISJP_JOL3RESEARCH_service div,
+.modify fieldset#EOL_JOL3RESEARCH_service div,
+.modify fieldset#service_EOLSEARCH div {
+    background: #f0f0f0;
+    width: 688px;
+    padding: 1em 0;
+}
+
+/* add by Nicholas for "Add/Modify Account"*/
+#partnerInformation {
+    _margin-bottom: 15px;
+}
+
+#addService, .service_delete {
+    text-decoration: underline;
+    margin-right: 50px;
+    margin-top: 10px;
+    float: right;
+    font-weight: 700;
+}
+
+.modify fieldset#masterServiceSubscription input.text {
+    width: 295px;
+}
+
+.modify fieldset#masterServiceSubscription input.date {
+    width: 109px;
+}
+
+.modify ul#errors {
+    list-style-type: none;
+    background: #f1e0e0;
+    margin: -1em 0 1em 0;
+    padding: .8em 0 .2em 0;
+}
+
+#popUp .modify ul#errors {
+    /*margin:-30px 0 1em 0;*/
+}
+
+.modify ul#errors li label {
+    margin: 0 10px 5px 10px;
+    font-weight: bold;
+    line-height: 1.2em;
+    width: auto;
+}
+/* Overlay */
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #333333;
+    opacity: .3;
+    filter: alpha(opacity = 30);
+    width: 100%;
+    height: 100%;
+    z-index: 4000;
+}
+
+#blank {
+    position: absolute;
+}
+
+#loader {
+    width: 40px;
+    height: 40px;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    z-index: 4010;
+}
+
+#popUp {
+    position: absolute;
+    z-index: 4200;
+    border: 1px solid #999;
+    background: #fff;
+    overflow: hidden;
+    -moz-box-shadow: 0px 0px 7px #777;
+    -webkit-box-shadow: 0px 0px 7px #777;
+    box-shadow: 0px 0px 7px #777;
+}
+
+    #popUp .content {
+        overflow: hidden;
+    }
+
+    #popUp .message {
+        padding: 0 .8em;
+    }
+
+        #popUp .message p {
+            line-height: 1.3em;
+        }
+
+    #popUp .header {
+        background-color: #f4f2f2;
+        height: 20px;
+        overflow: hidden;
+        padding: .8em 1.3em;
+        border-bottom: 1px solid #e5e5e5;
+        margin: 0 0 10px 0;
+    }
+
+    #popUp .modify h2 {
+        margin: 0;
+        line-height: 17px;
+    }
+
+    #popUp .close {
+        width: 17px;
+        height: 17px;
+        float: right;
+        background: transparent url("https://cert-legal2admin.lexisnexis.jp/manager/images/close.gif") no-repeat 0 0;
+        border: none;
+        text-indent: -9999em;
+        margin: 0;
+    }
+
+    #popUp .modify .form {
+        padding: 0 0 0 1.3em;
+    }
+
+.form p {
+    clear: left;
+    margin: 0;
+    padding: 0;
+}
+
+    .form p.informative {
+        margin: 0 0 .75em 0;
+    }
+
+#popUp .modify fieldset {
+    clear: left;
+    padding: .8em 0 0 0;
+}
+
+#popUp .moveMembers .buttons {
+    padding: 0;
+}
+
+#popUp .moveMembers .searchButton {
+    text-shadow: 1px 1px #000;
+    clear: left;
+    margin: 0 0 10px 0;
+}
+
+    #popUp .moveMembers .searchButton div {
+        width: 70px;
+        text-align: center;
+    }
+
+.disabled div {
+    background: #b5b5b5 url("../images/disabled_buttonbg.gif") repeat-x 0 0;
+}
+
+#popUp .moveMembers #add div {
+    /*background:transparent url("../images/add.gif") no-repeat top center; */
+}
+
+#popUp .buttons {
+    clear: none;
+    padding: 0 1.3em 1.3em 1.3em;
+}
+
+#popUp .admin-options {
+    float: left;
+    margin: 0;
+    padding: 1.4em 0 0 1.3em;
+}
+/* Modify members page or overlay */
+.modify #modifyMembers fieldset {
+    clear: none;
+    float: left;
+}
+
+.modify #modifyMembers .user-set {
+    height: 280px;
+    width: 260px;
+    overflow-y: scroll;
+    border: 1px solid #7f9db9;
+    padding: .8em .8em .1em .8em;
+    margin: 0;
+    list-style-type: none;
+}
+
+.modify #modifyMembers .moveMembers {
+    float: left;
+    padding: 100px 20px;
+}
+
+.modify #modifyMembers input {
+    float: left;
+    clear: left;
+    margin: 0 0 .7em 0;
+    height: auto;
+}
+
+.modify #modifyMembers label {
+    line-height: 1.1em;
+    clear: none;
+    color: #36c;
+    margin-left: .8em;
+}
+
+.modify #includeMembers {
+    clear: left;
+    margin: 0 1em .7em 145px;
+}
+
+.modify label.checkbox {
+    float: left;
+    clear: none;
+    background: #fff;
+    width: auto;
+}
+
+.admin-results .header {
+    margin-bottom: 0;
+}
+
+.admin-results table, #searchResults {
+    border: medium none;
+    border-collapse: collapse;
+    margin: 10px;
+    padding-right: 20px;
+    width: 677px;
+    table-layout: fixed;
+}
+
+    .admin-results td, #searchResults td {
+        border: none;
+        padding: 5px 0;
+    }
+
+    .admin-results thead, #searchResults thead {
+        color: #666;
+        border-bottom: 1px solid #d1d1d1;
+    }
+/* error styling */
+.modify label.error {
+    font-weight: bold;
+    color: #b02;
+    padding: 0 10px 3px 145px;
+    width: auto;
+    line-height: 1.2em;
+}
+
+.modify .form p.error label {
+    color: #b02;
+}
+
+.modify .form p.error input.text {
+    border: 1px solid #b02;
+}
+/* Date picker */
+.ui-datepicker {
+    display: none;
+    padding: 5px 7px 0 7px;
+    border: 1px solid #999;
+    -moz-box-shadow: 0px 0px 7px #777;
+    -webkit-box-shadow: 0px 0px 7px #777;
+    box-shadow: 0px 0px 7px #777;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.ui-datepicker-next {
+    padding: 0px 1px 0px 0;
+    /*background-position:0 4px;*/
+    float: right;
+}
+
+.ui-datepicker-title {
+    text-align: center;
+    margin-top: -.9em;
+    padding: 0 0 .4em 0;
+}
+
+.ui-datepicker table {
+    margin: 0 0 7px 0;
+}
+
+.ui-datepicker td {
+    border-color: #ccc;
+    padding: 0;
+}
+
+    .ui-datepicker td span, .ui-datepicker td a {
+        text-align: center;
+        display: block;
+        padding: .3em;
+        border: none;
+    }
+
+.ui-datepicker .ui-state-active {
+    font-weight: bold;
+    border: 2px solid #360;
+}
+/* Group management */
+#cloneMembers {
+    display: none;
+}
+
+    #cloneMembers input {
+        height: auto;
+    }
+
+    #cloneMembers label {
+        line-height: 1em;
+    }
+
+ul.tool {
+    list-style-type: none;
+    float: left;
+    clear: both;
+    font-weight: bold;
+}
+/* Tree */
+/* topic tree */
+.key {
+    float: right;
+    position: relative;
+}
+
+    .key h3 {
+        font-weight: bold;
+        padding-right: 7px;
+    }
+
+    .key #keyPointer {
+        position: absolute;
+        list-style-type: none;
+        width: 15px;
+        height: 9px;
+        background: transparent url('../images/key-pointer.gif') no-repeat 0 0;
+        top: 5.6em;
+        left: 17.7em;
+    }
+
+ul#key {
+    display: none;
+    border: 1px solid #36c;
+    padding: 10px;
+    list-style-type: square;
+    list-style-position: inside;
+    background: #fff;
+    position: absolute;
+    top: -7em;
+    left: -19.2em;
+    width: 19em;
+}
+
+    ul#key li {
+        padding: 2px 0;
+    }
+
+        ul#key li.must {
+            font-weight: bold;
+            color: #000;
+        }
+
+        ul#key li.may {
+            color: #090;
+        }
+
+        ul#key li.not {
+            color: #999;
+            text-decoration: line-through;
+        }
+
+.topic-tree {
+    clear: both;
+    position: relative;
+    z-index: 0;
+    margin: 1em 0 0 0;
+}
+
+    .topic-tree ul.nav {
+        float: left;
+        list-style-type: none;
+        z-index: 100;
+        margin: 0 -1px 0 0;
+        position: relative;
+    }
+
+        .topic-tree ul.nav li {
+            width: 180px;
+            border-top: 1px dotted #e1e1e1;
+            border-right: 1px solid #e1e1e1;
+            border-bottom: 1px solid #fff;
+            z-index: 100;
+            padding: 0 0 0 1px;
+            background: #fff;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+            .topic-tree ul.nav li.first {
+                border-top: 1px solid #fff;
+            }
+
+            .topic-tree ul.nav li.ui-tabs-selected {
+                border-top: 1px solid #e1e1e1;
+                border-left: 1px solid #e1e1e1;
+                border-right: 1px solid #fff;
+                padding: 0;
+            }
+
+                .topic-tree ul.nav li.ui-tabs-selected a {
+                    color: #900;
+                }
+
+            .topic-tree ul.nav li a {
+                display: block;
+                padding: .5em 1em;
+                font-weight: normal;
+            }
+
+    .topic-tree .panel {
+        clear: none;
+        background: #fff;
+        height: 15em;
+        overflow-y: scroll;
+        overflow-x: auto;
+        z-index: 50;
+        position: relative;
+    }
+
+    .topic-tree #treeBusy {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 15em;
+        width: 100%;
+        opacity: .7;
+        filter: alpha(opacity = 70);
+        background: #ccc;
+        z-index: 9000;
+    }
+
+        .topic-tree #treeBusy h2 {
+            font-size: 2em;
+            width: 100%;
+            text-align: center;
+            line-height: 6em;
+        }
+
+    .topic-tree .panel .tree-tab {
+        padding: .8em;
+    }
+/* Tree */
+.tree-tab ul {
+    list-style-type: none;
+    float: left;
+    clear: left;
+    padding: 0;
+    margin: 0 0 0 10px;
+    position: relative;
+}
+
+    .tree-tab ul ul {
+        display: none;
+        margin: 0 0 0 20px;
+    }
+
+.tree-tab li {
+    float: left;
+    clear: left;
+    position: relative;
+    line-height: 1.3em;
+    padding: 5px 0 0 0;
+    margin: -3px 0 3px 0;
+    background: #fff url('../images/tree-li.gif') repeat-y 5px 0;
+}
+
+.tree-tab ul ul li {
+    margin: 0;
+}
+
+.tree-tab li.first {
+    padding: 0;
+    margin: 8px 0 0 0;
+}
+
+    .tree-tab li.first > span {
+        top: 0;
+    }
+
+    .tree-tab li.first > label {
+        margin-top: -3px;
+        margin-bottom: 3px;
+    }
+
+.tree-tab li.last {
+    background-repeat: no-repeat;
+}
+
+.tree-tab li span {
+    float: left;
+    width: 10px;
+    height: 10px;
+    text-indent: -9999em;
+    cursor: pointer;
+    background: transparent url('../images/tree-toggle.gif') no-repeat 0 0;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+    .tree-tab li span.open {
+        background-position: 0 -10px;
+    }
+
+.tree-tab select {
+    position: absolute;
+    left: -9999em;
+}
+
+.tree-tab label {
+    padding: 0 0 0 30px;
+    background: transparent url('../images/tree-label.gif') no-repeat 6px center;
+    height: 1.3em;
+    line-height: 1.3em;
+    white-space: nowrap;
+}
+
+    .tree-tab label.must {
+        font-weight: bold;
+        color: #000;
+    }
+
+    .tree-tab label.may {
+        color: #090;
+    }
+
+    .tree-tab label.not {
+        color: #999;
+        text-decoration: line-through;
+    }
+/* Pseudo ajax popups */
+#searchAccountsPop, #exportAllAccountsPop, #addNewUserPop, #exportAllUsersPop,
+#importAllUsersPop, #searchGroupsPop, #addNewGroupPop, #modifyGroupMembersPop,
+#confirmUpdateMembersPop, #confirmDeleteGroupPop, #confirmDeleteAccountPop,
+#confirmResetPasswordPop, #confirmSendPasswordPop, #importErrorPop, #showImportEorror, #errorDialog, #addNewPackagePop, #updatePackagePop, #deletePackagePop {
+    display: none;
+}
+
+#removeMembers {
+    display: none;
+}
+
+.heightalteration {
+    float: left;
+    height: 100px;
+    min-height: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 690px !important;
+}
+
+.firstrowheadings tr {
+    border-bottom: 1px solid #ccc;
+}
+/*add by Nicholas*/
+#topHeaders li {
+    display: inline;
+    line-height: 20px !important;
+}
+
+.title {
+    font-weight: 700;
+    color: #666666;
+    font-size: 1em;
+}
+
+
+
+#lblJOL3ALERT, #lblJOL3RESEARCH {
+    clear: none;
+    text-align: center;
+    width: 60px;
+    display: none;
+}
+
+#JOL3ALERT, #JOL3RESEARCH {
+    margin: 5px 0 0 0;
+    display: none;
+    border: none;
+}
+
+#userAdditionalInfo {
+    height: 50px;
+}
+
+#managerInformation {
+    width: auto;
+    padding-bottom: 20px;
+}
+
+
+
+#baseInformation {
+    height: 35px;
+}
+
+.panel .tab ul.checkList li del span.button, .panel .tab ul.checkList li.focused del span.button {
+    background-position: 0 -7px;
+}
+
+.panel .tab ul.checkList li.focused span.button {
+    background-position: 0 -14px;
+}
+
+#confirmSendPasswordBody ul {
+    width: 95%;
+    height: 200px;
+    margin: 10px;
+    list-style-type: none;
+    overflow-y: scroll;
+    border: 1px solid #E1E1E1;
+}
+
+#confirmSendPasswordBody li {
+    margin: 5px 5px 0 5px;
+}
+
+#confirmSendPasswordBody input {
+    float: none;
+    margin: 0 0 0 0;
+    vertical-align: -3px;
+    border: 0px;
+}
+
+.sendPasswordTitle {
+    margin-left: 12px;
+    font-weight: 700;
+}
+
+.clearEmail {
+    margin-left: 12px;
+}
+
+#resultTable div {
+    width: 100%;
+    height: 13px;
+}
+
+.accSearchTitleLink, .accSearchEmailLink {
+    color: #3366CC;
+    cursor: pointer;
+}
+
+.accSearchTitleLink {
+    word-break: break-all;
+    width: 113px;
+    word-wrap: break-word;
+}
+
+.accSearchEmailLink {
+    word-break: break-all;
+    width: 192px;
+    word-wrap: break-word;
+}
+
+#importUsers label {
+    font-size: 7pt\9;
+}
+
+.importErrorContent {
+    padding: 2px;
+    color: red;
+}
+
+#memberSearch {
+    line-height: 20px;
+}
+
+#findNextUser div {
+    line-height: 8px !important;
+}
+
+.tree-tab li {
+    line-height: 1;
+}
+
+.logOutWidth {
+    width: 385px;
+    width: 358px\9;
+    *width: 376px;
+    _float: none !important;
+    _width: 360px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.logOutWidth2 {
+    width: 177px;
+    width: 163px\9;
+    *width: 190px;
+    _width: 170px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    _float: none !important;
+}
+
+/*jol3.4*/
+#rdoTrial, #rdoReal, #rdoHTML, #rdoTEXT, #rdoIPHTML, #rdoIPTEXT {
+    float: none;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+#contractInfo span {
+    vertical-align: middle;
+}
+
+#rdoReal, #rdoTEXT, #rdoIPTEXT {
+    margin-left: 10px;
+}
+
+.connector {
+    float: left;
+    margin-right: 10px;
+}
+
+#dropContractType {
+    float: left;
+    margin-left: 0;
+}
+
+.modify input.number {
+    width: 100px;
+    height: auto;
+    padding-left: 0.25em;
+    line-height: normal;
+}
+
+.modify input.ip {
+    width: auto;
+    margin-right: 6px;
+    font-weight: normal;
+    height: auto;
+    padding-left: 0.25em;
+    margin: 0;
+    line-height: normal;
+}
+
+#addIPRange {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+#modifyAccount fieldset div {
+    clear: both;
+}
+
+#pgPackagesArea input, #packageArea input, #RIPackagesArea input {
+    margin: 0;
+}
+
+#ipRangeList {
+    padding-left: 0.25em;
+    float: left;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+    #ipRangeList td {
+        text-align: center;
+    }
+
+#ipRangeArea {
+    display: none;
+}
+
+#pgPackagesArea, #commentArea, #packageArea, #alertEmail {
+    margin-top: 10px;
+}
+
+#ipRangeArea button {
+    height: auto;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.buttonStyle {
+    height: auto;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+
+.btnDelete, .btnSave, .btnEdit {
+    width: 50px;
+}
+
+.btnSave, .btnCancel, #ipRangeList .ip {
+    display: none;
+}
+
+#pgPackagesArea td, #packageArea td, #ipRangeList td, #RIPackagesArea td {
+    border: 1px solid #CCCCCC;
+    vertical-align: middle;
+}
+
+.modify .form div.error label {
+    color: #BB0022;
+}
+
+.errorBorder, .errorBorder .ip {
+    border: 1px solid #BB0022 !important;
+}
+
+    .errorBorder .viewFrom, .errorBorder .viewTo {
+        color: #BB0022;
+    }
+
+.heightalteration table tr td div {
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+.accSearchName {
+    width: 82px;
+}
+
+#ddlAccounts {
+    width: 300px;
+}
+
+.account-info {
+    max-height: 350px;
+    overflow: auto;
+    display: none;
+    border: 1px solid #e1e1e1;
+    background: #f7f6f6;
+    _height: expression(this.scrollHeight > 350 ? "350px" : "auto");
+    float: left;
+    width: 100%;
+}
+
+#adminOptions {
+    display: none;
+}
+
+.account-row {
+    margin-bottom: 2px;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+    .account-row label {
+        width: 200px;
+        color: #999999;
+        float: left;
+    }
+
+    .account-row .value {
+        float: left;
+        line-height: 2.6em;
+    }
+
+.info {
+    padding: 0 5px 0 5px;
+}
+
+.opt {
+    display: none;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.iprange {
+    display: block;
+}
+
+.panel p.non-selected {
+    font-size: 1.7em;
+    color: #b9b9b9;
+    line-height: 350px;
+    text-align: center;
+    background: #f7f6f6;
+    margin: 0;
+    border: 1px solid #e1e1e1;
+    width: 100%;
+    height: 100%;
+}
+
+.panel .header {
+    background: #fff;
+    border-top: 1px solid #e1e1e1;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+    height: 25px;
+    margin: 0px;
+    padding: 10px 0 5px 0;
+    width: 100%;
+}
+
+.userAdmin, .isUserAdmin {
+    width: 100px;
+    text-align: center;
+}
+
+.isUserAdmin {
+    background: url("../images/tick.gif") no-repeat scroll center center transparent;
+}
+
+#userList {
+    display: none;
+}
+
+#newUserDetails div label {
+    margin: 0 1em 0 2em !important;
+}
+
+#newPackageDetails div label {
+    margin: 0 1em 0 2em !important;
+}
+
+#PackageDetails div label {
+    margin: 0 1em 0 2em !important;
+}
+
+.panel {
+    background: none repeat scroll 0 0 #F7F6F6;
+}
+
+#searchAccountsForm fieldset {
+    padding: 0 0 0 1.3em !important;
+}
+
+#rdoTrial, #rdoReal, #rdoHTML, #rdoTEXT, #rdoIPHTML, #rdoIPTEXT {
+    border: none;
+}
+
+#Comments {
+    width: 400px;
+    margin-bottom: 20px;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#errorDialog .message {
+    font-weight: bold;
+    min-height: 80px;
+    _height: expression(this.scrollHeight < 80 ? "80px" : "auto");
+}
+
+#errorDialog .bottom {
+    background-color: #F4F2F2;
+    float: left;
+    width: 100%;
+}
+
+#addNewUserPop .buttons {
+    width: 230px;
+    padding: 10px 0 20px 10px;
+}
+
+#addNewPackagePop .buttons {
+    width: 230px;
+    padding: 10px 0 20px 10px;
+}
+
+#updatePackagePop .buttons {
+    width: 230px;
+    padding: 10px 0 20px 10px;
+}
+
+#deletePackagePop .buttons {
+    width: 230px;
+    padding: 10px 0 20px 10px;
+}
+
+#searchAccountsForm input {
+    float: none;
+}
+
+#searchAccountsForm p {
+    margin: 0px 0px 10px;
+}
+
+#modifyAccount fieldset div {
+    clear: both;
+}
+
+#packages {
+    width: 100%;
+    padding-top: 20px;
+}
+
+    #packages table {
+        border: medium none;
+        border-collapse: collapse;
+        margin: 10px;
+        margin-top: 45px;
+        width: 98%;
+        table-layout: fixed;
+    }
+
+        #packages table th {
+            text-align: center;
+            border: 1px solid;
+        }
+
+        #packages table th, #packages table tr,#packages table tr td{
+            text-align: center;
+            border: 1px solid;
+        }
+
+#deletePackagePop #deleteMessage {
+    margin: 5px;
+}
+
+    #deletePackagePop #deleteMessage a {
+        padding-left: 5px;
+        float: left;
+    }
+
+#manageli {
+    position: relative !important;
+}
+
+    #manageli:hover > .manageul {
+        display: block;
+    }
+
+.manageul {
+    position: absolute !important;
+    display: none;
+    line-height: 20px;
+    padding: 0px !important;
+    margin: 0px !important;
+    list-style: none;
+    width: 150px;
+    background-color: #1F1F1F;
+    left: 0px;
+    top: 13px;
+}
+
+.manageul li {
+        padding: 0px;
+        margin: 0px;
+        border: none !important;
+        line-height: 15px;
+        display: block !important;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+        white-space: nowrap;
+}
+
+.rimodules td {
+    word-break:break-all;
+    word-wrap:break-word;
+}
+
+.button div {
+    border: 1px solid #fff;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+    margin: 0 auto;
+    padding: 6px;
+}
+
+#contentwrapper {
+    /* overflow:scroll; */
+    overflow:auto;
+}

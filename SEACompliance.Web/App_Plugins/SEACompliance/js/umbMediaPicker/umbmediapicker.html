@@ -1,0 +1,16 @@
+﻿<div>
+    <ul class="unstyled list-icons" ng-if="node">
+        <li>
+            <i class="icon icon-delete red hover-show pull-right" ng-click="removePicture()"></i>
+            {{node.name}}
+        </li>
+    </ul>
+    <ul class="unstyled list-icons">
+        <li>
+            <i class="icon icon-add blue"></i>
+            <a ng-click="openMediaPicker()" class="selectTopicIcon">
+                Select Icon
+            </a>
+        </li>
+    </ul>
+</div>

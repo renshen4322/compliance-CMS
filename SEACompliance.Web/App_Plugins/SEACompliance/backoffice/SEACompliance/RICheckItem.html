@@ -1,0 +1,40 @@
+﻿<div ng-controller="checkItemController">
+    <div data-ng-init="getAllCheckItem()">
+        <umb-panel>
+            <umb-header>
+                <umbeditpageentitler />
+                <div class="btn-group ln-createBtn">
+                    <a class="btn btn-primary" ng-click="location()">Create</a>
+                </div>
+            </umb-header>
+            <div class="umb-panel-body umb-scrollable row-fluid">
+                <div class="tab-content form-horizontal">
+                    <div class="umb-pane">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>CheckItemID</th>
+                                    <th>CheckItemContent</th>
+                                    <th>Penalty</th>
+                                    <th>ReasonCodes</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="checkitem in checkItems">
+                                    <td>{{checkitem.DocID}}</td>
+                                    <td>{{checkitem.CheckItemContent}}</td>
+                                    <td>{{checkitem.Penalty}}</td>
+                                    <td>{{checkitem.ReasonCodes}}</td>
+                                    <td><a href="" ng-click="location({{checkitem.DocID}})">Edit</a></td>
+                                    <td><a href="" ng-click="deleteCheckItemById(checkitem)">Delete</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </umb-panel>
+    </div>
+</div>

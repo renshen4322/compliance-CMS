@@ -1,0 +1,171 @@
+﻿<form name="RecordForm" class="nzcompliancePane" ng-controller="recordEditController">
+  <umbeditpageentitler />
+  <div id="recordId" class="umb-panel-body umb-scrollable row-fluid">
+    <div class="tab-content form-horizontal ln-form-bottom">
+      <p class="doctitle">{{recordPageModel.Title}}</p>
+      <div class="umb-pane">
+        <umb-control-group label="Topic" description="Topic">
+          <select ng-disabled='isShowSaveButton' name="selectPackageID" ng-model="recordPageModel.PackageID" ng-options="x.Code as x.Label for x in moduletypes"
+            ng-change="Module_change(recordPageModel.PackageID)" required>
+            <option value="">-- Please select --</option>
+          </select>
+          <span style="color:red" ng-show="RecordForm.selectPackageID.$dirty && RecordForm.selectPackageID.$invalid">
+            <span ng-show="RecordForm.selectPackageID.$error.required">Topic is Must</span>
+          </span>
+        </umb-control-group>
+        <umb-control-group label="Sub-topic" description="Sub-topic">
+          <select ng-disabled='isShowSaveButton' name="selectTopic" ng-model="recordPageModel.Topic" ng-options="x.Code as x.Label for x in topictypes"
+            ng-change="Topic_change(recordPageModel.Topic)" required>
+            <option value="">-- Please select --</option>
+          </select>
+          <span style="color:red" ng-show="RecordForm.selectTopic.$dirty && RecordForm.selectTopic.$invalid">
+            <span ng-show="RecordForm.selectTopic.$error.required">Sub-topic is Must</span>
+          </span>
+        </umb-control-group>
+        <umb-control-group label="Sub sub category" description="Sub sub category">
+          <select ng-disabled='isShowSaveButton' name="selectSubTopic" ng-model="recordPageModel.SubTopic" ng-options="x.Code as x.Label for x in subtypes"
+            required>
+            <option value="">-- Please select --</option>
+          </select>
+          <span style="color:red" ng-show="RecordForm.selectSubTopic.$dirty && RecordForm.selectSubTopic.$invalid">
+            <span ng-show="RecordForm.selectSubTopic.$error.required">Sub sub category is Must</span>
+          </span>
+        </umb-control-group>
+        <umb-control-group label="Title" description="Title">
+          <input ng-disabled='isShowSaveButton' id="Title" name="Title" type="text" class="umb-editor umb-textstring" ng-model="recordPageModel.Title"
+            ng-change="validateTitleText(false)" ng-class="{'invalidField': !validationFields['titleText'].isValid}" title="{{validationFields['titleText'].title}}"
+            required />
+          <span style="color:red" ng-show="RecordForm.Title.$dirty && RecordForm.Title.$invalid">
+            <span ng-show="RecordForm.Title.$error.required">Title is Must</span>
+          </span>
+        </umb-control-group>
+        <umb-control-group label="Author" description="Author">
+          <input id="Author" name="Author" type="text" class="umb-editor umb-textstring" ng-model="recordPageModel.Author" ng-change="validateAuthorText(false)"
+            ng-class="{'invalidField': !validationFields['authorText'].isValid}" title="{{validationFields['authorText'].title}}"
+            required />
+          <span style="color:red" ng-show="RecordForm.Author.$dirty && RecordForm.Author.$invalid">
+            <span ng-show="RecordForm.Author.$error.required">Author is Must</span>
+          </span>
+        </umb-control-group>
+        <umb-control-group label="Overview" description="Overview">
+          <umb-property property="property" ng-repeat="property in summaryProperties">
+            <umb-editor name="Summary" model="property" id="txtSummary"></umb-editor>
+          </umb-property>
+        </umb-control-group>
+        <umb-control-group label="Risk/Penalties" description="Risk/Penalties">
+          <umb-property property="property" ng-repeat="property in riskProperties">
+            <umb-editor model="property" id="txtRisk"></umb-editor>
+          </umb-property>
+        </umb-control-group>
+        <umb-control-group class="checkItem-label" label="Reference Documents" description="Reference Documents">
+        </umb-control-group>
+        <div class="checkItem-redoc">
+          <a href="javascript:;" class="btn btn-success" ng-click="editDoclistItem()">Add new document/link</a>
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <td>Document/Link</td>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Action</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="docItem in documentsList">
+                <td>
+                  <a target="_blank" ng-href="javascript:;" ng-click="downFile(docItem)">{{docItem.mimeType === "url" ? docItem.path : docItem.fileName}}</a>
+                </td>
+                <td>
+                  <p class="doctext">{{docItem.title}}</p>
+                </td>
+                <td>
+                  <p class="doctext">{{docItem.content}}</p>
+                </td>
+                <td>
+                  <a href="javascript:;" ng-click="editDoclistItem(docItem,$index)" style="color: #33bf81;" class="btn btn-link">Edit</a>
+                  <a href="javascript:;" ng-click="deleteDocumentsItem(docItem.docId)" style="color: #fe6561;" class="btn btn-link">Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <umb-control-group class="checkItem-label" label="Checklist Items" description="Checklist Items">
+        </umb-control-group>
+        <div class="checkItem-item">
+          <a class="btn btn-success" href="javascript:;" ng-click="modifyCheckItem()">Add new check item</a>
+          <div class="container-fluid" ng-hide="checkItem.isHide" ng-repeat="checkItem in recordPageModel.CheckItem | orderBy:'serialNumber'">
+            <div class="row-fluid">
+              <div class="span1">
+                {{checkItem.serialNumber}}
+              </div>
+              <div class="span11">
+                <div class="tools row-fluid">
+                  <div class="btn-group span3">
+                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+                      Version {{checkItem.Version}}
+                      <span ng-if="checkItem.maxVersion>1" class="caret"></span>
+                    </a>
+                    <ul ng-if="checkItem.maxVersion>1" class="dropdown-menu">
+                      <li ng-repeat="num in getVersionNumber(checkItem.maxVersion) track by $index">
+                        <!-- <a href="javascript:;" ng-click="findCurVersionItem(checkItem.EntityID,$index + num,$index)">Version {{$index + num}}</a> -->
+                        <a href="javascript:;" ng-click="findCurVersionItem(checkItem.EntityID,$index + 1,checkItem.index)">Version {{$index + 1}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="versionDiff span4">
+                    <button ng-disabled="checkItem.maxVersion == 1 || checkItem.maxVersion == checkItem.Version" class="btn" ng-click="versionDiff(checkItem, $index)">Compare with latest</button>
+                  </div>
+                  <div class="action span3">
+                    <a class="btn" ng-click="modifyCheckItem(checkItem,$index)">Edit</a>
+                    <a class="btn btn-danger" ng-click="deleteCheckItem(checkItem,$index)">Delete</a>
+                  </div>
+                </div>
+                <div class="content">
+                  <div class="underReview">
+                    <b>UnderReview:</b>
+                    <b ng-if="checkItem.UnderReview == 1" style="color: #35c786;">YES</b>
+                    <b ng-if="checkItem.UnderReview == 0" style="color: #fe5b57;">NO</b>
+                  </div>
+                  <div class="content-level">
+                    <b>Importance </b>{{checkItem.Importance}}
+                  </div>
+                  <div class="content-list">
+                    <span class="title">Content</span>
+                    <p ng-bind-html="checkItem.CheckItemContent"></p>
+                  </div>
+                  <div class="content-list">
+                    <span class="title">Penalty</span>
+                    <p ng-bind-html="checkItem.Penalty"></p>
+                  </div>
+                  <div class="content-list">
+                    <span class="title">Relevant Legislation</span>
+                    <p ng-bind-html="checkItem.ReasonCodes"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="text-center">
+          <button ng-disabled="isCheckItemNew" id="saveBut" class="btn btn-primary" ng-click="SaveRecord()">Save document</button>
+          <button ng-if="isShowSaveButton" class="btn btn-warning" ng-click="saveNewVersion()">Save document as new version</button>
+          <a href="#/SEACompliance/SEACompliance/RIRecord/-1" class="btn">Cancel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<script type="text/javascript">
+  function hidtxtChange() {
+    alert(3333);
+    var appElement = document.querySelector('[ng-controller=recordEditController]');
+    var $scope = angular.element(appElement).scope();
+    $scope.hidtxtChange();
+    $scope.$apply();
+  }
+  var title = $('#hidtxtSummary'); //the element I want to monitor 
+  title.bind('DOMNodeInserted', function (e) {
+    alert('element now contains: ' + $(e.target).html());
+  });
+</script>

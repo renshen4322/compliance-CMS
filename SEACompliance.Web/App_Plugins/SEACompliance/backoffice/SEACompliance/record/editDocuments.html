@@ -1,0 +1,55 @@
+<form name="myForm" novalidate>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Add/Edit reference document/link</h4>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <div class="editDoc">
+      <div class="row">
+        <div class="span2 text-left">Document/Link</div>
+        <div class="span6">
+          <input ng-disabled="editData.docId" class="fileName" type="text" ng-model="fileDocName" ng-change="changeFileList(fileDocName)" />
+          <label for="files" class="fileUpload btn" ng-disabled="editData.docId">Upload</label>
+          <input id="files" style="display: none;" ng-disabled="editData.docId" type="file" multiple nv-file-select="" uploader="uploader" filters="syncFilter,imageFilter,isExcelOrWord" />
+          <span class="validation-invalid" ng-if="fileRequired"><p>This should be Required</p></span>
+          <span class="validation-invalid" ng-if="urlError"><p>This is an error url. Please add the prefix of "http://" or "https://" </p></span>
+          <span class="validation-invalid" ng-if="uploadError"><p>Only support the file extenstion of .ppt, .pptx, .xls, .xlsx, .doc, .docx, .pdf, .txt, .jpg, .png</p></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span2 text-left">Title</div>
+        <div class="span6">
+          <input name="title" type="text" ng-model="editData.title" required ng-maxlength="500"/>
+          <span class="validation-invalid" ng-show="myForm.title.$error.required"><p>This should be Required</p></span>
+          <span class="validation-invalid" ng-show="myForm.title.$error.maxlength"><p>Maximum character limit is 500</p></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span2 text-left">Description</div>
+        <div class="span6">
+          <textarea name="content" rows="" cols="" ng-model="editData.content" required ng-maxlength="500"></textarea>
+          <span class="validation-invalid" ng-show="myForm.content.$error.required"><p>This should be Required</p></span>
+          <span class="validation-invalid" ng-show="myForm.content.$error.maxlength"><p>Maximum character limit is 500</p></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer" style="padding-right: 39px;">
+    <button class="btn btn-primary" type="submit" ng-click="ok(myForm.$valid)">Save</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</form>
+<!-- <form name="Form">
+  <div class="row">
+    <div>
+      <label>Required</label>
+      <input type="text" name="required" ng-model="form.required" validator="required">
+    </div>
+    <div>
+      <label>Url</label>
+      <input type="text" name="url" ng-model="form.url" validator="required, url">
+    </div>
+    <input type="text" name="emailBlur" ng-model="form.email" validator="email,url" />
+    <button validation-submit="Form" ng-click="next()">Submit</button>
+    <button validation-reset="Form">Reset</button>
+  </div>
+</form> -->

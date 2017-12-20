@@ -1,0 +1,26 @@
+{
+  javascript: [
+    "~/App_Plugins/SEACompliance/js/index.js",
+    "~/App_Plugins/SEACompliance/node_modules/angular-bootstrap/ui-bootstrap-tpls-0.10.0.min.js",
+    "~/App_Plugins/SEACompliance/node_modules/angular-file-upload/dist/angular-file-upload.min.js",
+    "~/App_Plugins/SEACompliance/node_modules/angular-validation-1.2.x/dist/angular-validation-rule.min.js",
+    "~/App_Plugins/SEACompliance/node_modules/angular-validation-1.2.x/dist/angular-validation.min.js",
+    "~/App_Plugins/SEACompliance/node_modules/he/he.js",
+    "~/App_Plugins/SEACompliance/node_modules/diff.js",
+    "~/App_Plugins/SEACompliance/js/Controllers/recordManagement/record/record.controller.js",
+    "~/App_Plugins/SEACompliance/js/Controllers/recordManagement/record/record.edit.controller.js",
+    "~/App_Plugins/SEACompliance/js/Controllers/recordManagement/record/record.resource.js",
+    "~/App_Plugins/SEACompliance/js/Controllers/recordManagement/record/editDocumentsCtrl.js",
+    "~/App_Plugins/SEACompliance/js/Controllers/recordManagement/record/editCheckItemCtrl.js",
+    "~/App_Plugins/SEACompliance/js/Controllers/recordManagement/record/diffCheckItemCtrl.js",
+    "~/App_Plugins/SEACompliance/js/Controllers/recordManagement/record/record.type.controller.js",
+    "~/App_Plugins/SEACompliance/js/Controllers/recordManagement/checkitem/checkitem.controller.js",
+    "~/App_Plugins/SEACompliance/js/Controllers/recordManagement/checkitem/checkitem.edit.controller.js",
+    "~/App_Plugins/SEACompliance/js/Controllers/recordManagement/checkitem/checkitem.resource.js"
+  ],
+	css: [
+		"~/App_Plugins/SEACompliance/css/table.css",
+    "~/App_Plugins/SEACompliance/css/seacompliance.css",
+    "~/App_Plugins/SEACompliance/css/jol3.css"
+	]
+}

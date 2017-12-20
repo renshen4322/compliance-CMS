@@ -1,0 +1,310 @@
+﻿.ln-createBtn {
+  float: right;
+  margin: 50px 20px;
+}
+
+.ln-SelectIcon img {
+  width: 80px;
+  height: 80px;
+}
+
+.ln-form-bottom {
+  padding-bottom: 100px;
+}
+
+.addSubTopicBtn,
+.ln-SaveBtnGroup {
+  margin-top: 20px;
+  float: right;
+}
+
+.questionOptions {
+  margin-left: 18px;
+}
+
+.preQuestionModal {
+  background-color: white;
+  z-index: 9999;
+  position: absolute;
+  top: 50%;
+  margin-top: -315px;
+  left: 50%;
+  margin-left: -450px;
+  width: 900px;
+  height: 630px;
+}
+
+.nzcompliancePane .preQuestionModal .table {
+  max-height: 460px;
+  margin-bottom: 0px !important;
+}
+
+.nzcompliancePane .preQuestionModal .preQuestionDialogTable tbody tr:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.nzcompliancePane .preQuestionModal .preQuestionSearchBtn {
+  margin-bottom: 10px;
+}
+
+.nzcompliancePane .compliancePager {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.nzcompliancePane .btn_selected {
+  background-color: #53a93f;
+  color: white;
+}
+
+.nzcompliancePane .compliance-modal-footer {
+  position: absolute;
+  bottom: 0%;
+  width: 870px;
+}
+
+.nzcompliancePane .preQuestion_selected {
+  background-color: #f2f2f2;
+}
+
+.nzcompliancePane .ln-searchBar {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.nzcompliancePane .ln-searchBar .preQuestionSearchBtn {
+  margin-bottom: 10px;
+}
+
+.nzcompliancePane .grid-search-button {
+  margin-bottom: 10px;
+}
+
+.nzcompliancePane .grid-item-selected {
+  background-color: #f2f2f2;
+}
+
+.nzcompliancePane .invalidField {
+  border: red solid 2px !important;
+}
+
+.nzcompliancePane .topic_filter {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.nzcompliancePane .doctitle {
+  font-weight: bold;
+  display: block;
+  font-size: 20px;
+  padding-left: 8px;
+}
+.checkItem-label .umb-control-group {
+  border-bottom: 0;
+  padding-bottom: 0px;
+}
+.checkItem-redoc {
+  margin-right: 8%;
+  margin-left: 180px;
+}
+.checkItem-redoc .table {
+  margin-top: 13px;
+}
+.checkItem-redoc .table td {
+  width: 25%;
+  vertical-align: middle;
+}
+.checkItem-redoc .table td .doctext {
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.checkItem-redoc .table thead > tr:first-child {
+  background-color: #f3f3f5;
+  font-weight: bold;
+}
+.checkItem-item {
+  margin-right: 8%;
+  margin-left: 180px;
+}
+.checkItem-item .container-fluid {
+  margin-top: 30px;
+}
+.checkItem-item .span1 {
+  font-size: 26px;
+  color: #009dda;
+  text-align: center;
+  line-height: 38px;
+}
+.checkItem-item .btn-group {
+  float: left;
+}
+.checkItem-item .versionDiff {
+  float: left;
+  /* padding-left: 14%; */
+}
+.checkItem-item .versionDiff button:disabled {
+  cursor: not-allowed;
+}
+.checkItem-item .underReview {
+  padding-top: 13px;
+}
+.checkItem-item .underReview .underContent {
+  float: left;
+}
+.checkItem-item .underReview .underTitle {
+  float: left;
+  width: 102px;
+}
+.checkItem-item .action {
+  float: right;
+}
+.checkItem-item .content {
+  clear: both;
+}
+.checkItem-item .content .content-level {
+  padding: 10px 0px;
+}
+.checkItem-item .content .content-list {
+  word-wrap: break-word;
+  word-break: normal;
+}
+.checkItem-item .content .content-list .title {
+  font-size: 17px;
+  display: block;
+  font-weight: 600;
+  padding: 0px 0px 10px 0px;
+  color: inherit;
+}
+.checkItem-item .content .content-list p {
+  margin-left: 10px;
+}
+.umb-pane .line {
+  background-color: #f3f3f5;
+  height: 3px;
+}
+.umb-pane .text-center {
+  margin-top: 30px;
+}
+.editDoc {
+  padding-left: 25px;
+}
+.editDoc .row div:first-child {
+  padding: 4px 0px 0px 0px;
+}
+.editDoc .row input {
+  width: 100%;
+}
+.editDoc .row textarea {
+  width: 100%;
+}
+.editDoc .row .fileName {
+  width: 277px;
+}
+.editDoc .row .fileUpload {
+  line-height: 2;
+  height: 29px;
+  background-color: antiquewhite;
+  padding: 0px;
+  margin-bottom: 9px;
+  width: 77px;
+}
+.editCheckItem {
+  padding-left: 7px;
+}
+.editCheckItem .row div:first-child {
+  text-align: left;
+  padding: 0px 8px 0px 0px;
+}
+.editCheckItem .row input {
+  width: 100%;
+}
+.editCheckItem .row textarea {
+  width: 100%;
+}
+.editCheckItem .row .fileName {
+  width: 277px;
+}
+.editCheckItem .row .fileUpload {
+  padding: 0px;
+  margin-bottom: 9px;
+  width: 77px;
+  color: transparent;
+}
+.editCheckItemModal .modal-body {
+  overflow: auto;
+}
+.editCheckItemSize {
+  min-width: 973px;
+  left: 35%;
+}
+.editContent {
+  width: 788px;
+}
+.editTitle {
+  width: 145px;
+}
+.validation-valid {
+
+}
+
+.validation-invalid {
+  color: red;
+}
+.editCheckItem .underContent .radio input{
+  width: 25px;
+}
+.documentList table td {
+  max-width: 80px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+ins, ins > * {
+  color: black;
+  width: min-content;
+	background: #bbffbb !important;
+}
+
+del, del > * {
+  color: black;
+  width: min-content;
+	background: #ffbbbb !important;
+}
+.diffCheckItem {
+   
+}
+.versionInfo {
+  font-size: 17px;
+  line-height: 28px;
+  text-align: left;
+  color: #009ddb;
+  padding-top: 15px;
+}
+.diffCheckItem .diffLeft {
+  margin-right: 5px;
+  background: #fff;  
+  width: 49%;
+}
+.diffCheckItem .diffLeft .diffCenter {
+}
+.diffCheckItem .diffRight {
+  margin-left: 7px;
+  background: #fff;
+  width: 49%;
+}
+.diffCheckItem .diffRight .diffCenter {
+}
+.diffCheckItem .diff-title {
+  padding: 5px 0px 0px 7px;
+}
+.diffCheckItem .diff-title b {
+  color: maroon;
+}
+.diffCheckItem .diff-content {
+  padding-left: 10px;
+  word-wrap: break-word;
+  word-break: normal;
+}
